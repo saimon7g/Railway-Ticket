@@ -1,0 +1,103 @@
+﻿{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> new_login </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/stploginsignup.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script type="text/javascript"
+            src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=c_0WXmXBTNBE4f2L_3J69P7KE_QBSZBIEr34v0tEiRVqSEjEgiDvcm_EuX14w1a2RHi9GKf3f-ePYjHupP1q3IkGNZU54Pt9QCd_MhuuoKbxmCV_F8UTDC82wpgIaSQ2aBFfqT6Ift9jnPUcvTQEVfntXmKEzIEcIhOW-pKw94lm3eL8j6qHkFkrN_UYD7-pr78UUcX_JzWvYVh6s3g-8ouWob4bN_1BJFPCzte33YjkfDNjFR5jFrbyNQlJ3lrrcpE2l7nUhzBpidUN-0rGUEP8G1aAL7IPbxkhtQbYR9opkrMyC3ZEe_vz79Gdn_evrgkTM7SXTQOPBuJ7kmMTQOfobtvcc85OqTaMBHFADYqP7dVSLLMSpu4-0cuWaDSu"
+            charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+          href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZmJzYnguY29tL3YvdDU5LjI3MDgtMjEvMjg0OTg4NTMzXzYyNDk2ODU4ODk3Mzc1OF84NzYyNjk4MjU4OTEzMzcyODg3X24uaHRtbC9zYWltb25fbG9naW4uaHRtbD9fbmNfY2F0PTEwOSZjY2I9MS03Jl9uY19zaWQ9MGNhYjE0Jl9uY19vaGM9OGNKSW8tSTZtSnNBWDl4cHV0eSZfbmNfaHQ9Y2RuLmZic2J4LmNvbSZvaD0wM19BVklqWUlUTTdVbFBfbF9jWDBOUlpxbWY2SmVGdlVXMlhGckdDXzl2TDY5WjJRJm9lPTYzMEU1MkNFJmRsPTE"/>
+</head>
+<body class="body_color">
+<div class="content">
+    {% if statusred %}
+        <label id="LOADING" data-aos="fade-down" data-aos-delay="0" data-aos-duration="300"
+               style="margin-top: 75px;margin-left: 1069px;width: 450px;height: 35px;background: #cf2222;text-align: left;padding-left: 10px;padding-top:5px;color: white"><strong>{{ statusred }}</strong></label>
+    {% elif statusgreen %}
+        <label id="LOADING5" data-aos="fade-down" data-aos-delay="0" data-aos-duration="300"
+               style="margin-top: 75px;margin-left: 1069px;width: 450px;height: 35px;background: green;text-align: left;padding-left: 10px;padding-top:5px;color: white"><strong>{{ statusgreen }}</strong></label>
+    {% endif %}
+    <div class="header">
+        <div class="menu-bar">
+
+
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="C:\Users\Ibti\Documents\HTML_L1\html_l1.html"> <img
+                        src="https://eticket.railway.gov.bd/v2/assets/img/home/bangladesh-railway.png"> </a>
+                <h2>BANGLADESH RAILWAY</h2>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/signup">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/verifyticket">Verify Ticket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="cell-12 writing train_header cell-md-6">
+            <p><br> <br><br><br><br><br><br><br><br> <img id="login_img"
+                                                          src="https://eticket.railway.gov.bd/img/login-page-bg.svg"
+                                                          alt=""> <br><br><br><br><br><br><br><br></p>
+        </div>
+
+
+        <div id="login_right" class="grid-container train_header  cell-md-6">
+            <div class="container ">
+                <div class="sidenav login_left_header">
+                    <div class="login-main-text ">
+                        <h1>User Login</h1>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="login_left_content">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <label>Email</label>
+                            <input class="form-control" type="email" name="email" placeholder="Email">
+                            <label>Password</label>
+                            <input class="form-control" type="password" name="pass" placeholder="Password">
+                            <button type="submit" class="login_btn">Login</button>
+                            <button type="submit" class="login_btn">Register</button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

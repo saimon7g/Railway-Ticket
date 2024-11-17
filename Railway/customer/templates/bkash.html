@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> four payments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/stploginsignup.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript"
+            src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=u5_XFp5b_5LGXAAD7IiH2qtraa1LYqjy6FahKIMOIYmyjCZC-IvI0mgMDyI5c1YgUxVbZtuie0CkIZEHmUWO-KfoYAXW4RIrZA5vmt97DWWzD9c980shXFmoXIp__unKRiSEJcM69FwLUuI_HhTaQ6k3W0coxomP05QAe8ChRAetUfywXEmmhFofsNM0Q7nfip6t32A06xR0UnFl93jH0L0yolPGY85dQcWlJ7hQ01PqHywlP1YnbSWMwwx3v8UZ_dTQH6_v5GNFSrK49ONFIXvQoAoVKKXU86dYGWvt8WewjZgHcjIR3nzDVN8EoX8vKF9bd5UUaq_9e3XGB0nOOirnasWo_CrxziuisinOiF4"
+            charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+          href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZmJzYnguY29tL3YvdDU5LjI3MDgtMjEvMzAyMDI2NTM3XzYwMzA1MDYwNzg2MTM5NF8yNzc2Mzg3NDE5MTA1MDcyMjI0X24uaHRtbC9ia2FzaC5odG1sP19uY19jYXQ9MTAyJmNjYj0xLTcmX25jX3NpZD0wY2FiMTQmX25jX29oYz1UZWhYN2FGU0hmMEFYX3dmRV9FJl9uY19odD1jZG4uZmJzYnguY29tJm9oPTAzX0FWSmc5U2taR3c0YjlHY3E0eTd3ajZZUm9RM29WQzMzcDBTbHJ5aWNXeTgyTVEmb2U9NjMwRTE3RkImZGw9MQ"/>
+</head>
+<body class="body_color">
+<div class="content">
+    <div class="header">
+        <div class="menu-bar">
+
+
+           <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="C:\\Ibti\Documents\HTML_L1\html_l1.html"> <img
+                        src="https://eticket.railway.gov.bd/v2/assets/img/home/bangladesh-railway.png"> </a>
+                <h2>BANGLADESH RAILWAY</h2>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/userhome">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/searchtrain">Search Ticket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/verifyticket">Verify Ticket</a>
+                        </li>
+                        <li id="nav-item">
+                            <div class="dropdown">
+                                <button style=" margin-top: 4px; margin-left: 12px; font-size: 16px; font-weight: 500; color: white; background-color: black; border-radius: 14px;" class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ username}}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li style="text-align: center;"><a href="/upcomingprevious">Your Tickets</a></li>
+                                    <li style="text-align: center;"><a href="/updateinfo"> Upadte Info</a></li>
+                                    <li style="text-align: center;"><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+        </div>
+
+    </div>
+
+
+    <section>
+
+        <div class=" search_info">
+            <div class="container grid bkash_cost">
+                <div class="cell-12">
+                    <p style="font-size: 30px; margin-top: 40px; margin-bottom: 40px;">TOTAL COST: {{ cost }}</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class=" search_info">
+
+            <div class="grid">
+
+                <div class="cell-12 bkash_img train_header cell-md-6">
+                    <a href="#"> <img style="margin-top: 380px;" class="nexus"
+                                      src="https://www.daily-sun.com/assets/news_images/2022/01/01/bkash-2-F.jpg"
+                                      alt=""> </a>
+                </div>
+
+                <div  class="grid-container train_header cell-md-6">
+                    <div class="container">
+                        <div class="login_left_header">
+                            <div style="margin-right: 100px">
+                                <h2>Bkash</h2>
+                                <p>Enter your phone number and pin number here</p>
+                            </div>
+                        </div>
+                        <div class="main">
+                            <div class="login_left_content">
+                                <form style="margin-right: 100px" method="POST"  action="{% url 'customer:bkashpay' %}">
+                                    {% csrf_token %}
+                                    <label style="margin-top: 30px; margin-bottom: 30px; color: white;">Phone Number</label>
+                                    <input type="text" class="form-control" placeholder="Phone" name="phonenum">
+                                    <label style="margin-top: 30px; margin-bottom: 30px; color: white;">Pin</label>
+                                    <input type="password" class="form-control" placeholder="Password"  name="pin">
+                                    <button style="font-size: 40px; background-color: #00dd00; margin-top: 50px; width:150px; " type="submit" class="payment_btn btn-secondary">Pay</button>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+</div>
+</body>
+</html>

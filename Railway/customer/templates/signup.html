@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up </title>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/signup.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/stploginsignup.css' %}"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- <link rel="stylesheet" href="train.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- <video autoplay muted loop id="myVideo">
+  <source src="train2.mp4" type="video/mp4">
+</video> -->
+
+<div class="content">
+    <!-- <nav class="my-navbar navbar">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Welcome </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="C:\Users\Ibti\Documents\HTML_L1\html_l1.html">Sign_In</a></li>
+        </ul>
+    </nav> -->
+    <div class="header">
+        <div class="menu-bar">
+
+
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="C:\Users\Ibti\Documents\HTML_L1\html_l1.html"> <img
+                        src="https://eticket.railway.gov.bd/v2/assets/img/home/bangladesh-railway.png"> </a>
+                <h2>BANGLADESH RAILWAY</h2>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/signup">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/verifyticket">Verify Ticket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+        </div>
+
+    </div>
+
+    {% if statusred %}
+        <label id="LOADING" data-aos="fade-down" data-aos-delay="0" data-aos-duration="300"
+               style="margin-top: -75px;width: 1550px;height: 35px;background: #cf2222;text-align: center;padding-left: 10px;padding-top:5px;color: white"><strong> Not Working </strong></label>
+    {% elif statusgreen %}
+        <label id="LOADING5" data-aos="fade-down" data-aos-delay="0" data-aos-duration="300"
+               style="margin-top: -75px;width: 1550px;height: 35px;background: #cf2222;text-align: center;padding-left: 10px;padding-top:5px;color: white"><strong> Working </strong></label>
+    {% endif %}
+
+    <div class="container">
+        <section>
+            <form class="overall-form" method="POST">
+                {% csrf_token %}
+                <h1 class="form_header">Fill up the informations please</h1>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password</label>
+                        <input  class="form-control" type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputFname">First Name</label>
+                        <input type="text" class="form-control" name="first" placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputLname">Last Name</label>
+                        <input type="text" class="form-control" name="last" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="phone_no">Phone Number</label>
+                        <input type="number" class="form-control" name="contact" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="nid_no">NID Number</label>
+                        <input type="number" class="form-control" name="nid" placeholder="NID Number">
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="gender">Gender</label>
+                        <select name="gender" class="form-control">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress2">Address</label>
+                        <input type="text" class="form-control" name="adress" placeholder="Address">
+                    </div>
+                </div>
+                <div class="form-group form-row">
+                    <label for="journey_date">Date of Birth</label>
+                    <input type="date" class="form-control" name="dob">
+                </div>
+
+                <div class="grid-item">
+                    <button class="btns">Register</button>
+                </div>
+
+            </form>
+        </section>
+    </div>
+</div>
+
+
+<script src="video.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

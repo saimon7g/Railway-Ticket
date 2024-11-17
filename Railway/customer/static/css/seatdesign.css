@@ -1,0 +1,462 @@
+
+ol{
+  font-size: 14px;
+}
+
+#jumbo{
+  background-color: green;
+}
+
+.menu-bar{
+  background-color: white;
+}
+
+
+.nav-link{
+  font-size: 16px;
+  margin:3px;
+  color: #fff!important;
+  font-weight: 500;
+  border-radius: 14px;
+  background-color: black;
+  margin-left: 20px;
+}
+
+
+.nav-link:hover{
+  font-weight: 600;
+  color: #0d0!important;
+  transition: 0.01s;
+  transition-delay: 0.05s;
+  /* background-color: #00004d; */
+  /* border-bottom: 1px solid #fff!important; */
+}
+
+.navbar-nav{
+  text-align: right;
+  margin-right: 20px;
+}
+
+.hover-underline-animation {
+  width: 60%;
+  display: inline-block;
+  position: relative;
+  color: #000000;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #16db65;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.cell-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.cell-md-1 {
+  flex: 0 0 12.5%;
+  max-width: 12.5%;
+}
+
+.cell-md-2 {
+  flex: 0 0 16.66%;
+  max-width: 16.66%;
+}
+
+.cell-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.cell-md-6 {
+
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.cell-md-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.grid {
+  display: flex;
+  margin-left: -0.833335rem;
+  margin-right: -0.833335rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.items{
+  width: 32%;
+  margin: 5px;
+}
+
+tr{
+  border-bottom: 1px solid black;
+}
+.menu-bar .navbar-toggler{
+  padding-right: 20px;
+  outline: none!important;
+  border: none!important;
+}
+
+
+
+@media only screen and (max-width: 800px){
+  .nav-link:hover{
+    border-bottom: none!important;
+  }
+}
+
+.navbar-brand img{
+  width: 70px;
+  height:55px;
+  margin-left: 40px;
+  margin-right: 2px;
+  background: white;
+}
+
+
+.hero-image {
+  background-image: url("bg.jpg");
+  background-color: #cccccc;
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns:  auto auto auto;
+  padding: 7px;
+}
+
+.grid-container p{
+  margin-top: 40px;
+  text-align: center;
+}
+
+.grid-item{
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.btn1, .btn2, .btn3{
+  border-color: blue;
+  margin-top: 60px;
+  background-color: blue;
+  font-size: 25px;
+  border-radius: 25px;
+  margin-left: 65px;
+  margin-right: 65px;
+  width: 130px;
+  color: white;
+}
+
+.btn1:hover, .btn2:hover, .btn3:hover{
+  border-color: magenta;
+  background-color: magenta;
+}
+
+
+.text__content h1{
+  font-size: 50px;
+  white-space: nowrap;
+  padding-bottom: 20px;
+}
+
+.text__content p{
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  white-space: nowrap;
+}
+/* .sec{
+  padding-bottom: 10px;
+  border-bottom: 2px solid #16db65 50%;
+  width: 50%;
+} */
+
+.item__content{
+  background: none;
+}
+
+.item__media{
+  padding: 5px;
+  border: 1px solid blue;
+}
+
+.item__body{
+  padding-left: 5px;
+}
+
+.feature{
+  margin: 10px;
+}
+
+table{
+    border-bottom: 1px solid #eceef1;
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 3;
+    margin: 1;
+    max-width: 100%;
+    text-align: left;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1000px){
+  .sec__title{
+    border-bottom: none!important;
+  }
+}
+
+.sec:after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 30%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 2.5px solid #16db65; /* This creates the border. Replace black with whatever color you want. */
+}
+
+
+.overall-form{
+  padding-top: 80px;
+}
+
+.form_header:after{
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  margin: 0 auto; /* This will center the border. */
+  width: 45%; /* Change this to whatever width you want. */
+  padding-top: 20px; /* This creates some space between the element and the border. */
+  border-bottom: 2.5px solid #16db65;
+}
+
+
+form{
+margin-bottom: 100px;
+color : #fff;
+}
+
+form h1{
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.btns{
+  border-radius: 10px;
+  background-color: lime;
+}
+
+
+.section__title{
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: fadeInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
+}
+
+.bg-custom-2 {
+  margin-top: 20px;
+}
+
+.my-navbar{
+  background: linear-gradient(15deg, #0a547a 0%, #1fd0c7 100%);
+}
+
+div {
+    display: block;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.has-cover{
+  margin-bottom: 40px;
+}
+
+
+.search_info{
+  background-color:black;
+}
+
+.search_info h2,p{
+  color: red;
+}
+
+.train_header{
+  padding-top: 2px;
+  text-align: center;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.train_header button{
+  border-radius: 10px;
+  color: black;
+  border: 1px solid black;
+}
+
+.header_search{
+  margin-top: 3px;
+  margin-bottom: 50px;
+  padding-top: 2px;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 7px;
+  font-size: 20px;
+}
+
+.seat_info{
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: black;
+  border: 1px solid white;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.header_search img{
+  padding-top: 30px;
+}
+
+.header_search button{
+  margin-left: 10px;
+  margin-top:  60px;
+  border: 1px solid black;
+  position: relative;
+  border-radius: 10px;
+  background-color: red;
+}
+
+.journey_text{
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 13px;
+}
+
+.journey_text p{
+  color: white;
+}
+
+.body_color{
+  background-color:  white;
+}
+
+.writing{
+  padding-top: 50px;
+}
+
+.marq{
+  color: white;
+}
+
+.custom-control-label-green{
+  border: 1px solid blue;
+  background-color: green;
+  border-radius: 15px;
+}
+
+  .custom-control-label-red{
+    margin-top: 10px;
+    border: 1px solid blue;
+    background-color: red;
+    border-radius: 15px;
+}
+  .custom-control-input{
+    opacity: 0;
+  }
+
+.nexus{
+  height: 200px;
+  width: 400px;
+  padding-bottom: 20px;
+}
+
+.bkash{
+  margin-left: 130px;
+  margin-top: 50px;
+  height: 150px;
+  width: 200px;
+}
+
+.rocket{
+  height: 200px;
+  width: 220px;
+  padding-bottom: 20px;
+}
+
+.visa{
+  height: 200px;
+  width: 200px;
+  margin-top: 30px;
+  margin-left: 120px;
+}
+
+#login_right{
+  background-color: black;
+}
+
+.login_left_header{
+  margin-left: 150px;
+  margin-top: 180px;
+}
+.login_left_content{
+  margin-left: 150px;
+}
+
+#login_img{
+  height: 400px;
+  width: 400px;
+  margin-top: -120px;
+}
+
+
+.login-main-text h2,p{
+  color: lime;
+}
+
+.signup_left_header{
+  margin-top: 180px;
+}
+
+.red_padding{
+  padding-top: 10px;
+}

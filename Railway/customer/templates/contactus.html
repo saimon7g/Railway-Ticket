@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title> new_login </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link type="text/css" rel="stylesheet" href="{% static 'css/verify.css' %}"/>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body class="body_color">
+  <div class="content">
+    <div class="header">
+      <div class="menu-bar">
+
+
+       <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="C:\\Ibti\Documents\HTML_L1\html_l1.html"> <img
+                        src="https://eticket.railway.gov.bd/v2/assets/img/home/bangladesh-railway.png"> </a>
+                <h2>BANGLADESH RAILWAY</h2>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/userhome">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/searchtrain">Search Ticket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/verifyticket">Verify Ticket</a>
+                        </li>
+                        <li id="nav-item">
+                            <div class="dropdown">
+                                <button style=" margin-top: 4px; margin-left: 12px; font-size: 16px; font-weight: 500; color: white; background-color: black; border-radius: 14px;" class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ username}}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li style="text-align: center;"><a href="/upcomingprevious">Your Tickets</a></li>
+                                    <li style="text-align: center;"><a href="/updateinfo"> Upadte Info</a></li>
+                                    <li style="text-align: center;"><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+      </div>
+
+    </div>
+
+    <div class=" contact_bg">
+        <div class="grid contact_header">
+            <p>
+                Meet the Developers of this Project
+            </p>
+        </div>
+
+        <div class="container grid">
+            <div class="cell-12 grid contact_personal cell-md-6">
+                <ul style="">
+            <li>
+                <div  class="grid contact_personal">
+                    <p>
+                      Name: Nur Uddin Ibne Huda
+                     </p>
+                </div>
+            </li>
+
+            <li>
+                <div  class="grid">
+                    <p>
+                      Email: 3123@gmail.com
+                     </p>
+                </div>
+            </li>
+        </ul>
+            </div>
+            <div class="cell-12 grid contact_personal cell-md-6">
+               <ul>
+            <li>
+                <div  class="grid contact_personal">
+                    <p>
+                      Name: Nur Uddin Ibne Huda
+                     </p>
+                </div>
+            </li>
+
+            <li>
+                <div  class="grid">
+                    <p>
+                      Email: 3123@gmail.com
+                     </p>
+                </div>
+            </li>
+        </ul>
+           </div>
+        </div>
+
+
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> Search Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/stploginsignup.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript"
+            src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ViRv-VMWHI1ODPHVW3svxSpG1-d9H8CEXQbV5j06o45svTO-uldkTkBdgRQF8OireEKUsWAowtL-H4V7NsguaJpIEnUdBjShxTxIoc98-xrvxRKxrt1vdoLc6EWBLCUEGUXuNDIE7kWcQRSaDuibwW_bWmsZesxlETHTdcfuzzu0CkCtRDSfT-CE7nvQq4CAFFr0PdNMre0a56YXAsuyzcc896irNaEdzbpVvrh2d-4SM3JkheEpMAfDxPde1n4n_opYuwtouqmwLC0a-B30q52rENcgOu64uERHlkm2WtzcSN5SPOehWzm2NgtQtg0PWAHX0PDVgwSPgm10cM6slotdGHAUY8gJaWxVqNh-j_5nlSu2uIfRWsY-rBUrtOrQAJegCJKUXc59eJ0Y9q6Waw"
+            charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+          href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZmJzYnguY29tL3YvdDU5LjI3MDgtMjEvMjk2ODU5NTY0XzgxNzg3MTA1OTU3NjczNl8zMzk2MDk2NTIyMDY2MTMwMTk0X24uaHRtbC9zYWltb25fc3RhcnRQYWdlLmh0bWw_X25jX2NhdD0xMDkmY2NiPTEtNyZfbmNfc2lkPTBjYWIxNCZfbmNfb2hjPTN0b1RPNUI2X3EwQVg4UEtOV3kmdG49cm4zRnd0YlR1ZUxqVFBmNCZfbmNfaHQ9Y2RuLmZic2J4LmNvbSZvaD0wM19BVkxQcWdmd0NTX2pSRHFUUHZKX1RsVWxOOWFzNkVkUmVlaFdSa2diaW5QV2dBJm9lPTYzMEUyQ0M1JmRsPTE"/>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <div class="menu-bar">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="C:\\Ibti\Documents\HTML_L1\html_l1.html"> <img
+                        src="https://eticket.railway.gov.bd/v2/assets/img/home/bangladesh-railway.png"> </a>
+                <h2>BANGLADESH RAILWAY</h2>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/userhome">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/searchtrain">Search Ticket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/verifyticket">Verify Ticket</a>
+                        </li>
+                        <li id="nav-item">
+                            <div class="dropdown">
+                                <button style=" margin-top: 4px; margin-left: 12px; font-size: 16px; font-weight: 500; color: white; background-color: black; border-radius: 14px;" class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ username}}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li style="text-align: center;"><a href="/upcomingprevious">Your Tickets</a></li>
+                                    <li style="text-align: center;"><a href="/updateinfo"> Upadte Info</a></li>
+                                    <li style="text-align: center;"><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+
+
+    <section>
+
+        <div class="container search_info">
+            <div class="grid grid_underline">
+
+                <div class="grid-container header_search cell-md-3">
+                    <img src="https://eticket.railway.gov.bd/img/train-app/running-train-icon.svg" alt="">
+                    <p>{{ details.from }} - {{ details.to }} <br> {{ details.date }}</p>
+
+                </div>
+
+                <div class="cell-12 writing header_search cell-md-6">
+                    <h2>ENJOY YOUR RIDE ON ANY TRAIN AVAILABLE</h2>
+                </div>
+
+                <div class=" header_search cell-md-3">
+                   <form action="{% url 'customer:search_train' %}">
+                       {% csrf_token %}
+
+                    <input type="text" name="train_id" hidden>
+                    <button type="submit" class="" > Modify Search</button>
+                        </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container search_info">
+            {% for train in trains %}
+                <div class="grid_underline">
+                    <div class="grid ">
+                        <div class="cell-12 writing train_header cell-md-6">
+                            <h2>{{ train.NAME }}</h2>
+                            <button> TRAIN DETAILS</button>
+                        </div>
+
+                        <div class="grid-container train_header cell-md-3">
+                            <div class="cell-12 journey_text cell-md-3">
+                                <p><strong> START</strong></p>
+                            </div>
+                            <div class="cell-12  cell-md-9">
+                                <p><strong>{{ train.DEPARTURE_TIME }} <br> {{ details.from }}
+                                </strong></p>
+                            </div>
+                        </div>
+
+                        <div class="grid-container train_header cell-md-3">
+                            <div class=" journey_text cell-md-3">
+                                <p><strong>STOP</strong></p>
+                            </div>
+                            <div class="  cell-md-9">
+                                <p><strong> {{ train.ARRIVAL_TIME }} <br> {{ details.to }}</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        {% if details.class == 's_chair' %}
+                            <div class="writing train_result_text seat_info cell-md-9">
+                                <p>Shovon Chair</p>
+                                <p>COST: {{ train.s_chairfair }}</p>
+                                <p>AVAILABLE: {{ train.s_chairseat }}</p>
+                            </div>
+                        {% elif details.class == 'snigdha' %}
+                            <div class="writing seat_info cell-md-9">
+                                <p> Snigdha </p>
+                                <p>COST: {{ train.snigdhafair }}</p>
+                                <p>AVAILABLE: {{ train.snigdhaseat }}</p>
+                            </div>
+                        {% elif details.class == 'shovan' %}
+                            <div class="writing seat_info cell-md-9">
+                                <p> Shovan </p>
+                                <p>COST: {{ train.shovanfair }}</p>
+                                <p>AVAILABLE: {{ train.shovanseat }}</p>
+                            </div>
+
+                        {% elif details.class == 'f_chair' %}
+                            <div class="writing seat_info cell-md-1">
+                                <p>First Class Chair</p>
+                                <p>COST: {{ train.f_chairfare }}</p>
+                                <p>AVAILABLE: {{ train.f_chairseat }}</p>
+                            </div>
+
+                        {% elif details.class == 'ac_s' %}
+                            <div class="writing seat_info cell-md-1">
+                                <p>AC Seat</p>
+                                <p>COST: {{ train.ac_seatfair }}</p>
+                                <p>AVAILABLE: {{ train.ac_seatseat }}</p>
+                            </div>
+
+                        {% elif details.class == 'f_berth' %}
+                            <div class="writing seat_info cell-md-1">
+                                <p>F Berth</p>
+                                <p>COST: {{ train.f_berthfair }}</p>
+                                <p>AVAILABLE: {{ train.f_berthseat }}</p>
+                            </div>
+
+                        {% endif %}
+                        <div class=" header_search cell-md-3">
+                            <form action="{% url 'customer:seatselection' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="text" name="train_id" value="{{ train.TRAIN_ID }}" hidden>
+                                <button type="submit" class=""> Purchase</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+        <div class="container">
+            <p><br> <br></p>
+
+        </div>
+
+
+    </section>
+
+</div>
+</body>
+</html>

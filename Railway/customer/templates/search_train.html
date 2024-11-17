@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> Search Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stploginsignup.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+            src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ViRv-VMWHI1ODPHVW3svxSpG1-d9H8CEXQbV5j06o45svTO-uldkTkBdgRQF8OireEKUsWAowtL-H4V7NsguaJpIEnUdBjShxTxIoc98-xrvxRKxrt1vdoLc6EWBLCUEGUXuNDIE7kWcQRSaDuibwW_bWmsZesxlETHTdcfuzzu0CkCtRDSfT-CE7nvQq4CAFFr0PdNMre0a56YXAsuyzcc896irNaEdzbpVvrh2d-4SM3JkheEpMAfDxPde1n4n_opYuwtouqmwLC0a-B30q52rENcgOu64uERHlkm2WtzcSN5SPOehWzm2NgtQtg0PWAHX0PDVgwSPgm10cM6slotdGHAUY8gJaWxVqNh-j_5nlSu2uIfRWsY-rBUrtOrQAJegCJKUXc59eJ0Y9q6Waw"
+            charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+          href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZmJzYnguY29tL3YvdDU5LjI3MDgtMjEvMjk2ODU5NTY0XzgxNzg3MTA1OTU3NjczNl8zMzk2MDk2NTIyMDY2MTMwMTk0X24uaHRtbC9zYWltb25fc3RhcnRQYWdlLmh0bWw_X25jX2NhdD0xMDkmY2NiPTEtNyZfbmNfc2lkPTBjYWIxNCZfbmNfb2hjPTN0b1RPNUI2X3EwQVg4UEtOV3kmdG49cm4zRnd0YlR1ZUxqVFBmNCZfbmNfaHQ9Y2RuLmZic2J4LmNvbSZvaD0wM19BVkxQcWdmd0NTX2pSRHFUUHZKX1RsVWxOOWFzNkVkUmVlaFdSa2diaW5QV2dBJm9lPTYzMEUyQ0M1JmRsPTE"/>
+</head>
+<body>
+
+<div class="content">
+    <div class="header">
+        <div class="menu-bar">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="C:\\Ibti\Documents\HTML_L1\html_l1.html"> <img
+                        src="https://eticket.railway.gov.bd/v2/assets/img/home/bangladesh-railway.png"> </a>
+                <h2>BANGLADESH RAILWAY</h2>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/userhome">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/searchtrain">Search Ticket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/verifyticket">Verify Ticket</a>
+                        </li>
+                        <li id="nav-item">
+                            <div class="dropdown">
+                                <button style=" margin-top: 4px; margin-left: 12px; font-size: 16px; font-weight: 500; color: white; background-color: black; border-radius: 14px;" class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ username}}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li style="text-align: center;"><a href="/upcomingprevious">Your Tickets</a></li>
+                                    <li style="text-align: center;"><a href="/updateinfo"> Upadte Info</a></li>
+                                    <li style="text-align: center;"><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <section>
+            <form class="login100-form validate-form" method="POST" action="{% url 'customer:search_train' %}">
+                {% csrf_token %}
+                 <span class="login100-form-title">
+                        User Login </span>
+
+                <h1 class="form_header">Fill up the informations please</h1>
+                    <div class="form-row form-group dropdown float">
+                        <label for="from">Choose your current place</label>
+                        <select class="form-control" name="from" required>
+                            <option hidden="" value="">From</option>
+                            {% for name in names %}
+                                <option>{{ name.NAME }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-row form-group dropdown float">
+                        <label for="from">Choose your current place</label>
+                        <select class="form-control" name="to" required>
+                            <option hidden="" value="">To</option>
+                            {% for name in names %}
+                                <option>{{ name.NAME }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-row wrap-input100 validate-input" data-validate="Password is required">
+                        <label for="seat">Seat Class</label>
+                        <select name="seat" class="form-control">
+                            <option value="s_chair">Shovon Chair</option>
+                            <option value="snigdha">Snigdha</option>
+                            <option value="shovan">Shovan</option>
+                            <option value="f_chair">First Class Chair</option>
+                            <option value="ac_s">AC Seat</option>
+                            <option value="f_berth">F Berth</option>
+                        </select>
+                    </div>
+                    <div class="form-row wrap-input100 validate-input">
+                        <label for="adult">Adult</label>
+                        <input type="number" class="form-control" name="adult">
+                    </div>
+
+                    <div class="form-row wrap-input100 validate-input">
+                    <label for="child">Child</label>
+                    <input type="number" class="form-control" name="child">
+                </div>
+
+
+                <div class="form-row wrap-input100 validate-input">
+                    <label for="journey_date">Journey Date</label>
+                    <input class="form-control float-left" required type="date" min="{{ min }}" name="journey_date"
+                           max="{{ max }}">
+                </div>
+
+                <div class="grid-item">
+                     <button class="btns login100-form-btn" type="submit">
+                        Search
+                    </button>
+                </div>
+
+            </form>
+        </section>
+    </div>
+
+{#    <div class="container">#}
+{##}
+{##}
+{#        <section>#}
+{#            <form class="login100-form validate-form" method="POST" action="{% url 'customer:search_train' %}">#}
+{#                {% csrf_token %}#}
+{#                <span class="login100-form-title">#}
+{#                        User Login </span>#}
+{##}
+{#                <div class="dropdown float">#}
+{#                    <label for="from">Choose your current place</label>#}
+{#                    <select class="form-control" name="from" required>#}
+{#                        <option hidden="" value="">From</option>#}
+{#                        {% for name in names %}#}
+{#                            <option>{{ name.NAME }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{#                <div class="dropdown float">#}
+{#                    <label for="from">Choose your current place</label>#}
+{#                    <select class="form-control" name="to" required>#}
+{#                        <option hidden="" value="">To</option>#}
+{#                        {% for name in names %}#}
+{#                            <option>{{ name.NAME }}</option>#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{##}
+                {#                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">#}
+                {#                    <label for="from">Choose your current place</label>#}
+                {#                    <select name="from" class="form-control" content="">#}
+                {#                        <option value="KAMALAPUR">Dhaka</option>#}
+                {#                        <option value="Chittagon">Chittagon</option>#}
+                {#                        <option value="Rajshahi">Rajshahi</option>#}
+                {#                        <option value="Sylhet">Sylhet</option>#}
+                {#                        <option value="Khulna">Khulna</option>#}
+                {#                        <option value="Barishal">Barishal</option>#}
+                {#                        <option value="Rangpur">Rangpur</option>#}
+                {#                        <option value="Mymensingh">Mymensingh</option>#}
+                {#                    </select>#}
+                {#                </div>#}
+                {#                <div class="wrap-input100 validate-input" data-validate="Password is required">#}
+                {#                    <label for="to">Choose your destination</label>#}
+                {#                    <select name="to" class="form-control">#}
+                {#                        <option value="Dhaka">Dhaka</option>#}
+                {#                        <option value="CHITTAGONG">Chittagon</option>#}
+                {#                        <option value="Rajshahi">Rajshahi</option>#}
+                {#                        <option value="Sylhet">Sylhet</option>#}
+                {#                        <option value="Khulna">Khulna</option>#}
+                {#                        <option value="Barishal">Barishal</option>#}
+                {#                        <option value="Rangpur">Rangpur</option>#}
+                {#                        <option value="Mymensingh">Mymensingh</option>#}
+                {#                    </select>#}
+                {#                </div>#}
+{##}
+{#                <div class="wrap-input100 validate-input" data-validate="Password is required">#}
+{#                    <label for="seat">Seat Class</label>#}
+{#                    <select name="seat" class="form-control">#}
+{#                        <option value="s_chair">Shovon Chair</option>#}
+{#                        <option value="snigdha">Snigdha</option>#}
+{#                        <option value="shovan">Shovan</option>#}
+{#                        <option value="f_chair">First Class Chair</option>#}
+{#                        <option value="ac_s">AC Seat</option>#}
+{#                        <option value="f_berth">F Berth</option>#}
+{#                    </select>#}
+{#                </div>#}
+{##}
+{#                <div class="wrap-input100 validate-input">#}
+{#                    <label for="adult">adult</label>#}
+{#                    <input type="number" class="form-control" name="adult">#}
+{#                </div>#}
+{##}
+{#                <div class="wrap-input100 validate-input">#}
+{#                    <label for="child">Child</label>#}
+{#                    <input type="number" class="form-control" name="child">#}
+{#                </div>#}
+{##}
+{##}
+{#                <div class="wrap-input100 validate-input">#}
+{#                    <label for="journey_date">Journey Date</label>#}
+{#                    <input class="form-control float-left" required type="date" min="{{ min }}" name="journey_date"#}
+{#                           max="{{ max }}">#}
+{#                </div>#}
+{##}
+{#                <div class="container-login100-form-btn">#}
+{#                    <button class="login100-form-btn" type="submit">#}
+{#                        search#}
+{#                    </button>#}
+{#                </div>#}
+{##}
+{##}
+{#            </form>#}
+{##}
+{##}
+{#        </section>#}
+{#    </div>#}
+</div>
+
+
+</body>
+</html>
+
+

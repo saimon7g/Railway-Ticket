@@ -1,0 +1,846 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> seat_design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/seatdesign.css' %}"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript"
+            src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=UReGF3g1W6fHEUkEhDWVYUZ5p3Uz6hYrnx5k_1BtNrr4kcsEUhvCAe_qNOpY4j-3wkRYaNzxM2LKXzShUQhcaVQufIAY0ewTeiO0L_61WlmmttOm0rgVSyTiD3QfrApr3ReUvxrTpbI9fD7XPJx_erKQ40EHZh9_t169Fbg6dZaFjux8TRFRZ6y7OdD8XZuBkrTcUn_sZ_ryi5xEU7BVfZeZdTjIMoEv3O0c5suawaUz1N3hCIzEtrU23zwz_OuohWz1m0EsduSiiqElTk99ITRzGGjYlPlZDRCKo-4ViRdl8NwIIt7oMfn3KMHu2yrmWCh1a3ZnZw9rCpjgk2xKyRsIkrdODdLIz_lfDICzvzE0pww_tlJzijkmF3zQUP5m8FXYaKsAvLIHHhjDdS85tw"
+            charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+          href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZmJzYnguY29tL3YvdDU5LjI3MDgtMjEvMjk1NTA1MDU0XzExMjg5MzI2OTQ2NzIwMDBfMjgzOTk4MTA1NTE3MzI4MDcyN19uLmh0bWwvc2VhdF9kZXNpZ24uaHRtbD9fbmNfY2F0PTEwNCZjY2I9MS03Jl9uY19zaWQ9MGNhYjE0Jl9uY19vaGM9QlpmU0RIWDRZNndBWF9UOGxpNSZ0bj1ybjNGd3RiVHVlTGpUUGY0Jl9uY19odD1jZG4uZmJzYnguY29tJm9oPTAzX0FWTGs1V2lOMkRfYnNCc3BVQTF6dC1YRXk3bTJuMXluZ3BNMFJiZ0JYNm1YZGcmb2U9NjMwRUMyMjAmZGw9MQ"/>
+</head>
+<body class="body_color">
+<div class="content">
+    <div class="header">
+        <div class="menu-bar">
+
+
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="C:\\Ibti\Documents\HTML_L1\html_l1.html"> <img
+                        src="https://eticket.railway.gov.bd/v2/assets/img/home/bangladesh-railway.png"> </a>
+                <h2>BANGLADESH RAILWAY</h2>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/userhome">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/searchtrain">Search Ticket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/verifyticket">Verify Ticket</a>
+                        </li>
+                        <li id="nav-item">
+                            <div class="dropdown">
+                                <button style=" margin-top: 4px; margin-left: 12px; font-size: 16px; font-weight: 500; color: white; background-color: black; border-radius: 14px;" class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ username}}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li style="text-align: center;"><a href="/upcomingprevious">Your Tickets</a></li>
+                                    <li style="text-align: center;"><a href="/updateinfo"> Upadte Info</a></li>
+                                    <li style="text-align: center;"><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+        </div>
+
+    </div>
+
+
+    <section>
+
+        <div class="container search_info">
+
+            <div class="grid">
+
+                <div class="cell-12 writing train_header cell-md-6">
+                    <p style="font-size: 30px; margin-bottom: 40px;">DOOR</p>
+                </div>
+
+                <div class="cell-12 writing train_header cell-md-6">
+                    <p style="font-size: 30px; margin-bottom: 40px;">TOILET</p>
+                </div>
+
+            </div>
+
+             <form form action="{% url 'customer:reserve' %}" method="POST">
+                {% csrf_token %}
+                <div class="grid">
+
+                    <div class="grid-container train_header cell-md-6">
+
+                        <div class="  cell-md-6">
+                            <div class="cell-12 journey_text ">
+
+                                {% if 1 in booked_seats %}
+                                <div class="custom-control red_padding custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck1" name="seat1"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck1">Seat: 01 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox"  id="customCheck1" name="seat1"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck1">Seat: 01 </label>
+                                </div>
+                                {% endif %}
+
+                                {% if 5 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox"  id="customCheck5" name="seat5"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck5">Seat: 05 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox"  id="customCheck5" name="seat5"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck5">Seat: 05 </label>
+                                </div>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="cell-12 journey_text ">
+
+                                {% if 9 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck9" name="seat9"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck9">Seat: 09 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck9" name="seat9"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck9">Seat: 09 </label>
+                                </div>
+                                {% endif %}
+
+
+                                {% if 13 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck13" name="seat13"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck13">Seat: 13 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck13" name="seat13"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck13">Seat:  13 </label>
+                                </div>
+                                {% endif %}
+
+
+                            </div>
+                            <div class="cell-12 journey_text ">
+
+                                {% if 17 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck17" name="seat17"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck17">Seat: 17 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck17" name="seat17"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck17">Seat: 17 </label>
+                                </div>
+                                {% endif %}
+
+
+                                {% if 21 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck21" name="seat21"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck21">Seat: 21 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck21" name="seat21"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck21">Seat: 21 </label>
+                                </div>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="cell-12 journey_text ">
+
+                                {% if 25 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck25" name="seat25"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck25">Seat: 25 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck25" name="seat25"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck25">Seat: 25 </label>
+                                </div>
+                                {% endif %}
+
+                                {% if 29 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck29" name="seat29"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck29">Seat: 29 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck29" name="seat29"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck29">Seat: 29 </label>
+                                </div>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="cell-12 journey_text ">
+
+                                {% if 33 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck33" name="seat33"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck33">Seat: 33 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck33" name="seat33"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck33">Seat: 33 </label>
+                                </div>
+                                {% endif %}
+
+                                {% if 37 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck37" name="seat37"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck37">Seat: 37 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck37" name="seat37"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck37">Seat: 37 </label>
+                                </div>
+                                {% endif %}
+
+
+                            </div>
+                        </div>
+                        <div class="  cell-md-6">
+
+                            <div class="cell-12 journey_text ">
+
+                                {% if 2 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck2" name="seat2"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck2">Seat: 02 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck2" name="seat2"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck2">Seat: 02 </label>
+                                </div>
+                                {% endif %}
+
+                                {% if 6 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck6" name="seat6"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck6">Seat: 06 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck6" name="seat6"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck6">Seat: 06 </label>
+                                </div>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="cell-12 journey_text ">
+
+                                {% if 10 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck10" name="seat10"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck10">Seat: 10 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck10" name="seat10"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck10">Seat: 10 </label>
+                                </div>
+                                {% endif %}
+
+
+                                {% if 14 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck14" name="seat14"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck14">Seat: 14 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck14" name="seat14"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck14">Seat: 14 </label>
+                                </div>
+                                {% endif %}
+
+
+                            </div>
+                            <div class="cell-12 journey_text ">
+
+                                {% if 18 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck18" name="seat18"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck18">Seat: 18 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck18" name="seat18"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck18">Seat: 18 </label>
+                                </div>
+                                {% endif %}
+
+
+                                {% if 22 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck22" name="seat22"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck22">Seat: 22 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck22" name="seat22"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck22">Seat: 22 </label>
+                                </div>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="cell-12 journey_text ">
+
+                                {% if 26 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck26" name="seat26"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck26">Seat: 26 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck26" name="seat26"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck26">Seat: 26 </label>
+                                </div>
+                                {% endif %}
+
+                                {% if 30 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck30" name="seat30"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck30">Seat: 30 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck30" name="seat30"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck30">Seat: 30 </label>
+                                </div>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="cell-12 journey_text ">
+
+                                {% if 34 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck34" name="seat34"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck34">Seat: 34 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck34" name="seat34"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck34">Seat: 34 </label>
+                                </div>
+                                {% endif %}
+
+                                {% if 38 in booked_seats %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck38" name="seat38"
+                                           onclick="" hidden>
+                                    <label class="custom-control-label-red" for="customCheck38">Seat: 38 </label>
+                                </div>
+
+                                {% else %}
+                                <div class="custom-control custom-checkbox mb-3 ">
+                                    <input type="checkbox" id="customCheck38" name="seat38"
+                                           onclick="">
+                                    <label class="custom-control-label-green" for="customCheck38">Seat: 38 </label>
+                                </div>
+                                {% endif %}
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-container train_header cell-md-6">
+
+                            <div class="  cell-md-6">
+
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 3 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck3" name="seat3"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck3">Seat: 03 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck3" name="seat3"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck3">Seat: 03 </label>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if 7 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck7" name="seat7"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck7">Seat: 07 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck7" name="seat7"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck7">Seat: 07 </label>
+                                    </div>
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 11 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck11" name="seat11"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck11">Seat: 11 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck11" name="seat11"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck11">Seat: 11 </label>
+                                    </div>
+                                    {% endif %}
+
+
+                                    {% if 15 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck15" name="seat15"
+                                               onclick=""hidden>
+                                        <label class="custom-control-label-red" for="customCheck15">Seat: 15 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck15" name="seat15"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck15">Seat: 15 </label>
+                                    </div>
+                                    {% endif %}
+
+
+                                </div>
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 19 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck19" name="seat19"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck19">Seat: 19 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck19" name="seat19"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck19">Seat: 19 </label>
+                                    </div>
+                                    {% endif %}
+
+
+                                    {% if 23 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck23" name="seat23"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck23">Seat: 23 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck23" name="seat23"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck23">Seat: 23 </label>
+                                    </div>
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 27 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck27" name="seat27"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck27">Seat: 27 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck27" name="seat27"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck27">Seat: 27 </label>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if 31 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck31" name="seat31"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck31">Seat: 31 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck31" name="seat31"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck31">Seat: 31 </label>
+                                    </div>
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 35 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck35" name="seat35"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck35">Seat: 35 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck35" name="seat35"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck35">Seat: 35 </label>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if 39 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck39" name="seat39"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck39">Seat: 39 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck39" name="seat39"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck39">Seat: 39 </label>
+                                    </div>
+                                    {% endif %}
+
+
+                                </div>
+
+                            </div>
+                            <div class="  cell-md-6">
+
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 4 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck4" name="seat4"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck4">Seat: 04 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck4" name="seat4"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck4">Seat: 04 </label>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if 8 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck8" name="seat8"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck8">Seat: 08 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck8" name="seat8"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck8">Seat: 08 </label>
+                                    </div>
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 12 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck12" name="seat12"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck12">Seat: 12 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck12" name="seat12"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck12">Seat: 12 </label>
+                                    </div>
+                                    {% endif %}
+
+
+                                    {% if 16 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck16" name="seat16"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck16">Seat: 16 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck16" name="seat16"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck16">Seat: 16 </label>
+                                    </div>
+                                    {% endif %}
+
+
+                                </div>
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 20 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck20" name="seat20"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck20">Seat: 20 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck20" name="seat20"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck20">Seat: 20 </label>
+                                    </div>
+                                    {% endif %}
+
+
+                                    {% if 24 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck24" name="seat24"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck24">Seat: 24 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck24" name="seat24"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck24">Seat: 24 </label>
+                                    </div>
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 28 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck28" name="seat28"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck28">Seat: 28 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck28" name="seat28"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck28">Seat: 28 </label>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if 32 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck32" name="seat32"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck32">Seat: 32 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck32" name="seat32"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck32">Seat: 32 </label>
+                                    </div>
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="cell-12 journey_text ">
+
+                                    {% if 36 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck36" name="seat36"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck36">Seat: 36 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck36" name="seat36"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck36">Seat: 36 </label>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if 40 in booked_seats %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox"  id="customCheck40" name="seat40"
+                                               onclick="" hidden>
+                                        <label class="custom-control-label-red" for="customCheck40">Seat: 40 </label>
+                                    </div>
+
+                                    {% else %}
+                                    <div class="custom-control custom-checkbox mb-3 ">
+                                        <input type="checkbox" id="customCheck40" name="seat40"
+                                               onclick="">
+                                        <label class="custom-control-label-green" for="customCheck40">Seat: 40 </label>
+                                    </div>
+                                    {% endif %}
+
+
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+             <div class="pay_button">
+                 <button style="margin-top:27px; margin-bottom:27px; margin-left: 480px; border-radius: 18px;" class="btns btn-lg" type="submit"> Proceed To Pay</button>
+             </div>
+
+             </form>
+
+        </div>
+    </section>
+
+</div>
+
+<script type="text/javascript">
+    function changecolour(ID) {
+        var button = document.getElementById(ID).style.backgroundColor;
+        var color = '';
+
+        if (button !== 'green') {
+            color = 'green';
+            document.getElementById(ID).style.backgroundColor = color;
+
+        } else if (button === 'green') {
+            color = 'black';
+            document.getElementById(ID).style.backgroundColor = color;
+
+        }
+
+    }
+
+    function blackbuttons() {
+        let ele = document.getElementsByTagName('button')
+        let text = '';
+        if (document.getElementById("cond_new").checked) {
+            text = "a";
+        } else {
+            text = "b";
+        }
+        for (let i = 0; i < ele.length; i++) {
+            let butt = ele[i];
+            if (butt.style.backgroundColor === 'black') {
+                text = text + butt.innerHTML + " ";
+            }
+
+        }
+    }
+</script>
+
+</body>
+</html>

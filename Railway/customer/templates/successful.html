@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> new_login </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/stploginsignup.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script type="text/javascript"
+            src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=c_0WXmXBTNBE4f2L_3J69P7KE_QBSZBIEr34v0tEiRVqSEjEgiDvcm_EuX14w1a2RHi9GKf3f-ePYjHupP1q3IkGNZU54Pt9QCd_MhuuoKbxmCV_F8UTDC82wpgIaSQ2aBFfqT6Ift9jnPUcvTQEVfntXmKEzIEcIhOW-pKw94lm3eL8j6qHkFkrN_UYD7-pr78UUcX_JzWvYVh6s3g-8ouWob4bN_1BJFPCzte33YjkfDNjFR5jFrbyNQlJ3lrrcpE2l7nUhzBpidUN-0rGUEP8G1aAL7IPbxkhtQbYR9opkrMyC3ZEe_vz79Gdn_evrgkTM7SXTQOPBuJ7kmMTQOfobtvcc85OqTaMBHFADYqP7dVSLLMSpu4-0cuWaDSu"
+            charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+          href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZmJzYnguY29tL3YvdDU5LjI3MDgtMjEvMjg0OTg4NTMzXzYyNDk2ODU4ODk3Mzc1OF84NzYyNjk4MjU4OTEzMzcyODg3X24uaHRtbC9zYWltb25fbG9naW4uaHRtbD9fbmNfY2F0PTEwOSZjY2I9MS03Jl9uY19zaWQ9MGNhYjE0Jl9uY19vaGM9OGNKSW8tSTZtSnNBWDl4cHV0eSZfbmNfaHQ9Y2RuLmZic2J4LmNvbSZvaD0wM19BVklqWUlUTTdVbFBfbF9jWDBOUlpxbWY2SmVGdlVXMlhGckdDXzl2TDY5WjJRJm9lPTYzMEU1MkNFJmRsPTE"/>
+</head>
+<body class="body_color">
+<div class="content">
+
+    <div class="header">
+        <div class="menu-bar">
+
+
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="C:\\Ibti\Documents\HTML_L1\html_l1.html"> <img
+                        src="https://eticket.railway.gov.bd/v2/assets/img/home/bangladesh-railway.png"> </a>
+                <h2>BANGLADESH RAILWAY</h2>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/userhome">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/searchtrain">Search Ticket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/verifyticket">Verify Ticket</a>
+                        </li>
+                        <li id="nav-item">
+                            <div class="dropdown">
+                                <button style=" margin-top: 4px; margin-left: 12px; font-size: 16px; font-weight: 500; color: white; background-color: black; border-radius: 14px;" class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                    {{ username}}
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li style="text-align: center;"><a href="/upcomingprevious">Your Tickets</a></li>
+                                    <li style="text-align: center;"><a href="/updateinfo"> Upadte Info</a></li>
+                                    <li style="text-align: center;"><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+        </div>
+
+    </div>
+{#    <div class="grid">#}
+{##}
+{#        <div class="cell-12 writing train_header cell-md-6">#}
+{#            <p><br> <br><br><br><br><br><br><br><br> <img id="login_img"#}
+{#                                                          src="data:image/png;base64,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"#}
+{#                                                          alt=""> <br><br><br><br><br><br><br><br></p>#}
+{#        </div>#}
+{##}
+{##}
+{#        <div id="login_right" class="grid-container train_header  cell-md-6">#}
+{#            <div class="container ">#}
+{#                <div class="sidenav login_left_header">#}
+{#                    <div class="login-main-text ">#}
+{#                        <h2>User Login</h2>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="main">#}
+{#                    <div class="login_left_content">#}
+{#                       <table>#}
+{##}
+{#                           <thead>#}
+{#                           <tr>#}
+{#                               <th>Train ID</th>#}
+{#                               <th>{{ train_id }}</th>#}
+{#                           </tr>#}
+{#                           </thead>#}
+{##}
+{#                           <tbody>#}
+{#                               <tr>#}
+{#                                   <td style=""><strong>Train Name</strong></td>#}
+{#                                   <td><strong>{{ name }}</strong></td>#}
+{#                               </tr>#}
+{#                               <tr>#}
+{#                                   <td><strong>Originating Station(From Station)</strong></td>#}
+{#                                   <td><strong>{{ from }}</strong></td>#}
+{#                               </tr>#}
+{#                               <tr>#}
+{#                                   <td><strong>Destination Station(To Station)</strong></td>#}
+{#                                   <td><strong>{{ to }}</strong></td>#}
+{#                               </tr>#}
+{#                               <tr>#}
+{#                                   <td><strong>Class Name</strong></td>#}
+{#                                   <td><strong>{{ class }}</strong></td>#}
+{#                               </tr>#}
+{#                               <tr>#}
+{#                                   <td><strong>No. of total seats</strong></td>#}
+{#                                   <td><strong>{{ total_seats }}</strong></td>#}
+{#                               </tr>#}
+{#                               <tr>#}
+{#                                   <td><strong>Total fare</strong></td>#}
+{#                                   <td><strong>{{ amount }} BDT</strong></td>#}
+{#                               </tr>#}
+{#                           </tbody>#}
+{#                       </table>#}
+{##}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+    <div class="grid">
+
+        <div class="cell-12 writing success_bg cell-12">
+            <p><br> <br> <br> <img style="margin-top: 60px;" id="login_img"
+                                                          src="https://images.squarespace-cdn.com/content/v1/5bc50182e8ba44c62f8b8f74/1614819276034-NLKYE1XYG83S8G8F7K2A/Real-time+Monitoring%2C+from+Xeperno+IT+Solutions"
+                                                          alt="">
+                <br>
+            </p>
+            <p class="container success_text">
+                Congratulations !! Your payment is successful. You can check your ticket with Ticket ID and Phone Number
+            </p>
+
+        </div>
+    </div>
+
+    <div class="grid">
+        <div id="login_right" class="grid-container train_header  cell-12">
+            <div class="container">
+                <div class="success_login_left_header">
+                    <div class="login-main-text ">
+                        <h2 style="color: black;">Ticket Information</h2>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="success_login_left_content">
+                       <table>
+
+                           <thead>
+                           <tr>
+                               <th>Train ID</th>
+                               <th>{{ det.train_id }}</th>
+                           </tr>
+                           </thead>
+
+                           <tbody>
+                                <tr>
+                                   <td style=""><strong>Ticket ID</strong></td>
+                                   <td><strong>{{ det.reservation_id }}</strong></td>
+                               </tr>
+                               <tr>
+                                   <td style=""><strong>Train Name</strong></td>
+                                   <td><strong>{{ det.name }}</strong></td>
+                               </tr>
+                               <tr>
+                                   <td><strong>Originating Station(From Station)</strong></td>
+                                   <td><strong>{{ det.from }}</strong></td>
+                               </tr>
+                               <tr>
+                                   <td><strong>Destination Station(To Station)</strong></td>
+                                   <td><strong>{{ det.to }}</strong></td>
+                               </tr>
+                               <tr>
+                                   <td><strong>Class Name</strong></td>
+                                   <td><strong>{{ det.class }}</strong></td>
+                               </tr>
+                               <tr>
+                                   <td><strong>No. of total seats</strong></td>
+                                   <td><strong>{{ det.total_seats }}</strong></td>
+                               </tr>
+                               <tr>
+                                   <td><strong>Total fare</strong></td>
+                                   <td><strong>{{ det.amount }} BDT</strong></td>
+                               </tr>
+                           </tbody>
+                       </table>
+
+                    </div>
+
+                </div>
+                <form action="{% url 'customer:successful' %}" method="POST">
+                    {% csrf_token %}
+                    <button style="font-size: 30px; margin-left:470px;background-color: black; color: black" type="submit" class="btns">
+                    <p>
+                        Go Home
+                    </p>
+                </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>
